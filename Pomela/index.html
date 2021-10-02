@@ -10,6 +10,8 @@
     <title>Pomela</title>
 </head>
 <body>
+  <img class="header_Photo" src="img/header/background.png" alt="">
+
     <div class="Top">
     <h1 class="h1">Живи ярче с Pomela</h1>
     </div>
@@ -42,7 +44,7 @@
    </div>
 
 <div class="bottom_navbar">
-    <img src="img/header/Logo_Pomela.svg" alt="Pomela">
+    <img class="logo_pomela" src="img/header/Logo_Pomela.svg" alt="Pomela">
     <nav class="nav">
         <a href="#" class="nav_link">Главная</a>
         <span class="link_stick">|</span>
@@ -78,7 +80,7 @@
     </main>
     </div>
    </header>
-   <section class="categories">
+   <section id="categories" class="categories">
        <div class="container">
            <div class="categories_bg">
            <h3 class="section_title">Все категории</h3>
@@ -165,7 +167,7 @@
        </div>
    </section>
 
-    <section class="announcement">
+    <section id="announcement" class="announcement">
         <div class="container">
             <div class="announcement_bg">
                 <h3 class="section_title announcement_title">Интересные предложения</h3>
@@ -233,7 +235,7 @@
             </div>
         </div>
     </section>
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="about_bg">
                 <h3 class="section_title about_title">Почему мы?</h3>
@@ -256,7 +258,7 @@
                         <p class="about_text about_text_right about_text_top"> Поэтому многие вещи мы делаем очень <span class="important">быстро</span>   и используем самые современные технологии...</p>
                     </div>
                 </div>
-                <div class="whoIm">
+                <div id="whoIm" class="whoIm">
                     <h3 class="section_title title_whoIm">Кто мы?</h3>
                     <p class="whoIm_text about_text">Что такое <span class="important">помело</span>  - это фрукт, а если думать о <a href="index.html" class="pomela">pomela.uz</a> , то, это сайт с доской бесплатных объявлений в просторах Узбекистана, с очень простым и интересным функционалом, который думает о своем каждом клиенте!</p>
                     <img class="fruit_parallax fruit_parallax_1" src="img/about/image_1.png" alt="X">
@@ -267,6 +269,15 @@
             </div>
         </div>
     </section>
+</div>
+
+<div class="navigation">
+      <a href="#categories" class="navigation_link categories_link"> 
+        Категории</a>
+       <a href="#announcement" class="navigation_link premium_link">Предложения</a> 
+       <a href="#about" class="navigation_link about_link">О нас</a>
+       <a href="#whoIm" class="navigation_link whoIm_link">   
+        Кто мы?</a>
 </div>
 
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
