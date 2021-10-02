@@ -9,27 +9,41 @@ svg,rect,h1,h2,h3,h4,h5,h6,p,a,span,li,ul {
     padding: 0;
     
 }
+@font-face {
+    font-family: Sreda; /* Имя шрифта */
+    src: url(../font/Sreda.ttf); /* Путь к файлу со шрифтом */
+   }
+   @font-face {
+    font-family: Garet; /* Имя шрифта */
+    src: url(../font/garet.book.ttf); /* Путь к файлу со шрифтом */
+   }
 html {
     overflow: scroll;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
+    
 }
-/* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
+    
 }
 body {
-    background: url('../img/header/background.png') no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     position: relative;
     background-position: top;
     width: 100%;
     height: 100%;
 
+}
+.header_Photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
 }
 .Top {
     width: 100%;
@@ -41,6 +55,7 @@ body {
     width: 100%;
     height: 158px;
     position: relative;
+    padding-top: 300px;
 }
 .h1 {
     position: fixed;
@@ -58,7 +73,7 @@ body {
     position: fixed;
     z-index: -1;
     left: 25%;
-    top: 30%;
+    top: 40%;
     width: 930px;
     font-weight: 500;
     font-size: 48px;
@@ -386,7 +401,6 @@ body {
 
 
 
-
  .categories_bg {
     background-color: #FFFFFF;
     padding: 0px 0px 95px 0px;
@@ -406,11 +420,11 @@ body {
  }
  .categories_photo {
      padding-top: 150px;
+     width: 800px;
  }
  .categories_img {
      position: relative;
      width: 100%;
-     margin-right: 50px;
  }
  .categories_img::before {
      content: '';
@@ -559,13 +573,13 @@ body {
 .categories_inner {
     display: flex;
     align-items: center;
-    justify-content: space-around;
     margin-top: 30px;
+    justify-content: center;
 
 }
 .garderob_item {
     margin-bottom: 30px;
-    margin-left: 210px;
+    margin-left: 130px;
 }
 .categories_item_link {
     position: relative;
@@ -635,7 +649,6 @@ body {
     z-index: 1;
 }
 .slider {
-    min-width: 0%;
     margin: auto;
     
 }
@@ -879,4 +892,53 @@ body {
 .about_text {
     position: relative;
     z-index: 1;
+}
+
+.navigation_link {
+    background-color: #f8f8f4;
+    text-decoration: none;
+    color: #8000FF;
+    margin-top: 10px;
+    border-radius: 10px; 
+    width: 200px;
+    padding: 10px 60px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    font-family: Jost;
+    font-size: 18px;
+    letter-spacing: .1em;
+
+
+
+}
+.categories_link {
+    position: fixed;
+    right: -150px;
+    top:40%;
+
+    transition: all .4s ease;
+}
+.premium_link {
+    position: fixed;
+    right: -200px;
+    top:46%;
+    width: 250px;
+
+    transition: all .4s ease;
+}
+.about_link {
+    position: fixed;
+    right: -150px;
+    top:52%;
+
+    transition: all .4s ease;
+}
+.whoIm_link {
+    position: fixed;
+    right: -150px;
+    top:58%;
+
+    transition: all .4s ease;
+}
+.navigation_link:hover {
+    right: 0;
 }
