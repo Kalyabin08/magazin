@@ -22,7 +22,7 @@ html {
     background: #FF0000;
 }
 body {
-    background: url('../img/header/background.jpg') no-repeat;
+    background: url('../img/header/background.png') no-repeat;
     background-attachment: fixed;
     background-size: cover;
     position: relative;
