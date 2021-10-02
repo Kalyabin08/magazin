@@ -17,11 +17,16 @@ svg,rect,h1,h2,h3,h4,h5,h6,p,a,span,li,ul {
     font-family: Garet; /* Имя шрифта */
     src: url(../font/garet.book.ttf); /* Путь к файлу со шрифтом */
    }
+
 html {
     overflow: scroll;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
+::selection {
+    color: rgb(134, 0, 243); /* Цвет текста */
+    background: rgb(232, 255, 25); /* Цвет фона */
+   }
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
@@ -108,7 +113,7 @@ body {
 
     width: 100%;
 
-    background: #FFFFFF;
+    background: #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-between;
@@ -225,7 +230,7 @@ body {
     padding: 5px 88px;
 
 
-    background-color: #FFFFFF;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -402,7 +407,7 @@ body {
 
 
  .categories_bg {
-    background-color: #FFFFFF;
+    background-color: #f0f0f0;
     padding: 0px 0px 95px 0px;
  }
  .section_title {
@@ -594,7 +599,7 @@ body {
 .item_title { 
     position: absolute;
 
-    font-family: Sreda;
+    font-family: Sreda ;
     font-style: normal;
     font-weight: normal;
     font-size: 36px;
@@ -692,7 +697,7 @@ body {
     padding: 0px 88px;
     padding-bottom: 90px;
     margin-bottom: 180px;
-    background-color: #FFFFFF;
+    background-color: #f0f0f0;
     
 }
 
@@ -708,7 +713,7 @@ body {
     flex-wrap: wrap;
 }
 .announcement_item {
-    width: 314px;
+    width: 414px;
     padding: 18px 30px;
     border: 1px solid FBFFCF;
     background: #FBFFCF;
@@ -722,14 +727,15 @@ body {
 }
 .announcement_item_photo {
     border-radius: 10px;
+    width: 100%;
 }
 .product_name {
-    margin-top: 11px;
-    width: 258px;
+    width: 288px;
+    margin: 11px auto 0px auto;
     text-align: center;
 
     font-weight: 600;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 22px;
     letter-spacing: 0.3em;
     color: #8000FF;
@@ -741,7 +747,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    font-size: 11px;
+    font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.3em;
     color: #AA0000;
@@ -809,7 +815,7 @@ body {
 
 
 .about_bg {
-    background-color: #FFFFFF;
+    background-color: #f0f0f0;
     padding: 0px 75px 100px 75px;
 }
 .about_title {
