@@ -1,290 +1,950 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <title>Pomela</title>
-</head>
-<body>
-  <img class="header_Photo" src="img/header/background.png" alt="">
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+    font-family: Jost, sans-serif;
+}
+svg,rect,h1,h2,h3,h4,h5,h6,p,a,span,li,ul {
+    margin: 0;
+    padding: 0;
+    
+}
+@font-face {
+    font-family: Sreda; /* Имя шрифта */
+    src: url(../font/Sreda.ttf); /* Путь к файлу со шрифтом */
+   }
+   @font-face {
+    font-family: Garet; /* Имя шрифта */
+    src: url(../font/garet.book.ttf); /* Путь к файлу со шрифтом */
+   }
 
-    <div class="Top">
-    <h1 class="h1">Живи ярче с Pomela</h1>
-    </div>
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+::selection {
+    color: rgb(134, 0, 243); /* Цвет текста */
+    background: rgb(232, 255, 25); /* Цвет фона */
+   }
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+    
+}
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+    
+}
+body {
+    position: relative;
+    background-position: top;
+    width: 100%;
+    height: 100%;
 
-        <div class="wrapper">
-   <header id="header" class="header">
-       <div class="container">
-   <div class="top_navbar">
-    <nav class="navbar">
-        <a href="#" class="sign sign_in">
-            Войти
-        </a>
-        <span class="slesh">/</span>
-        <a href="#" class="sign sign_up">
-            Регистрация
-        </a>
-        <div class="language">
-            <span class="RU">Ру</span>
-            <span class="UZ">Uz</span>
-        </div>
-    </nav>
+}
+.header_Photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+.Top {
+    width: 100%;
+    height: 130px;
+    position: relative;
+    z-index: -1;
+}
+.Bottom {
+    width: 100%;
+    height: 158px;
+    position: relative;
+    padding-top: 300px;
+}
+.h1 {
+    position: fixed;
+    z-index: -1;
+    top: 2%;
+    left: 25%;
+
+    font-weight: 500;
+    font-size: 65px;
+    line-height: 94px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+}
+.h2 {
+    position: fixed;
+    z-index: -1;
+    left: 25%;
+    top: 40%;
+    width: 930px;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 1.5em;
+
+    text-align: center;
+    letter-spacing: 0.375em;
+    color: #8000FF;
+}
+.header {
+    width: 100%;
+
+}
+.header_title {
+    margin-top: 120px;
+    text-align: center;
+
+    font-weight: 500;
+    font-size: 79px;
+    line-height: 114px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+}
+.container {
+    width: 1600px;
+    margin: auto;
+}
+.top_navbar {
+
+    padding: 10px 88px;
+    margin: 0px auto 0 auto;
+
+    width: 100%;
+
+    background: #f0f0f0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+}
+.navbar {
+    display: flex;
+    align-items: flex-end;
+}
+.sign_in {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+    text-decoration: none;
+}
+.sign_up {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+    text-decoration: none;
+}
+.sign {
+    transition: .2s linear;
+}
+.sign:hover {
+    color: #AA0000;
+    text-decoration: underline;
+}
+.slesh {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+}
+.language {
+    margin-left: 36px;
+}
+.RU {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+    opacity: 0.5;
+}
+.UZ {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+    opacity: 0.5;
+}
+.btn {
+    --width: 170px;
+    --height:30px;
+    --begin:#8000FF;
+    --end: #AA0000;
+    position: relative;
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+}
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 70px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: #8000FF;
+
+    transition: 2s;
+}
+.message:hover {
+    color: #AA0000;
+}
+.btn_svg, .btn_rect {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    fill: none;
+}
+
+.btn_rect {
+    stroke: var(--begin);
+    stroke-width: 5;
+    stroke-dasharray: var(--height) var(--width);
+    stroke-dashoffset: calc(
+        2 * var(--width)
+        + 2 * var(--height)
+        + var(--height) / 2
+    );
+    transition:  2s ease;
+}
+.btn:hover .btn_rect,
+.btn:focus .btn_rect {
+    stroke:var(--end);
+    stroke-dashoffset: calc(var(--height) + var(--height) / 2);
+}
+.bottom_navbar {
+    padding: 5px 88px;
+
+
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.nav_link {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav_link::before {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background-color:#8000FF;
+    transition: .5s linear;
+}
+.nav_link:hover::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background-color:#8000FF;
+}
+.nav_link::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    background-color:#8000FF;
+    transition: .5s linear;
+}
+.nav_link:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    background-color:#8000FF;
+}
+.link_stick {
+    margin: 0px 5px;
+    font-size: 18px;
+    color: #6FFF17;
+}
+.btn_publish {
+    --width: 270px;
+    --height:40px;
+}
+.publish {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.085em;
+    color: #8000FF;
+    text-align: center;
+    text-decoration: none;
+
+    transition: 2s;
+}
+.publish:hover {
+    color: #AA0000;
+}   
+.main {
+    margin-bottom: 30px;
+}
+.header_subtitle {
+    width: 919px;
+    margin: 22px auto;
+
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 1.5em;
+    text-align: center;
+    letter-spacing: 0.375em;
+    color: #8000FF;
+}
+.search_icon {
+    margin-left: 3px;
+}
+.header_form {
+    width: 883px;
+    margin:auto;
+    display: flex;
+    background-color: #DFFF1E;
+    border-radius: 15px;
+    box-shadow: 0px 13px 18px rgba(213, 228, 31, 0.25);
+}
+.input_search {
+    display: flex;
+    align-items: center;
+    width: 322px;
+}
+.form_control {
+    padding: 6px 40px;
+
+    font-size: 19px;
+    line-height: 27px;
+    color: #8000FF;
+    border: none;
+    outline: none;
+    background-color:#DFFF1E;
+}
+::-webkit-input-placeholder  {
+    color: #8000FF;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 27px;
+    letter-spacing: 0.3em;
+    text-align: center;
+ }
+ .header_location {
+     display: flex;
+     align-items: center;
+ }
+ .button_location {
+     padding: 5px 100px 5px 40px;
+     width: 380px;
+     border: none;
+     background-color: #DFFF1E;
+     cursor: pointer;
+
+     color: #8000FF;
+     font-weight: normal;
+     font-size: 19px;
+     line-height: 27px;
+     letter-spacing: 0.3em;
+ }
+ .button_search {
+    padding: 8px 45px 8px 45px;
+    border: 0;
+    border-radius: 0px 15px 15px 0px;
+    background: #6FFF17;
+    cursor: pointer;
+
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: 0.3em;
+    color: #333333;
+    display: flex;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+ .categories_bg {
+    background-color: #f0f0f0;
+    padding: 0px 0px 95px 0px;
+ }
+ .section_title {
+    padding-top: 65px;
+    padding-left: 88px;
+
+    font-family: Garet;
+
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 52px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+    
+ }
+ .categories_photo {
+     padding-top: 150px;
+     width: 800px;
+ }
+ .categories_img {
+     position: relative;
+     width: 100%;
+ }
+ .categories_img::before {
+     content: '';
+     background: url('../img/categories/Sparkles.svg') no-repeat;
+     position: absolute;
+     top: 0;
+     right: -20%;
+     display: block;
+     width: 100%;
+     height: 20%;
+     transition: all 1s;
+
+     animation: stars_1 infinite 5s linear;
+ }
+
+ .categories_img::after {
+    content: '';
+    background: url('../img/categories/Sparkles.svg') no-repeat;
+    position: absolute;
+    top: -20%;
+    right: 0%;
+    display: block;
+    width: 100%;
+    height: 20%;
+    opacity: 0;
+    transition: all 1s;
+
+    animation: stars_2 infinite 7s linear;
+    animation-delay: 3000ms;
+}
+@keyframes stars_1 {
+    0% {
+        top: -20%;
+        transition: all 1s;
+        opacity: 0;
+       
+    }
+    5% {
+        top: -20%;
+        transition: all 1s;
+        opacity: 1;
+    } 
+    100% {
+     top: 35%;
+     opacity: 0;
+ }
+  }
+@keyframes stars_2 {
+    0% {
+        top: -20%;
+        opacity: 0;
+    }
+    5% {
+        top: -20%;
+        transition: all 1s;
+        opacity: 1;
+    } 
+    100% {
+     top: 40%;
+     opacity: 0;
+ }
+}
+@keyframes stars_3 {
+    0% {
+        top: -20%;
+        opacity: 0;
+        
+    }
+    5% {
+        top: -20%;
+        transition: all 1s;
+        opacity: 1;
+    } 
+    100% {
+     top: 40%;
+     opacity: 0;
+ }
+
+}
+@keyframes stars_4 {
+    0% {
+        top: -20%;
+        opacity: 0;
+    }
+    5% {
+        top: -20%;
+        transition: all 1s;
+        opacity: 1;
+    } 
+    100% {
+     top: 40%;
+     opacity: 0;
+
+ }
+
+}
+@keyframes stars_5 {
+    0% {
+        top: -20%;
+        opacity: 0;
+    }
+    100% {
+     top: 40%;
+     opacity: 0;
+ }
+
+}
+.stars {
+    position: absolute;
+    top: -20%;
+    right: 0%;
+    display: block;
+    width: 100%;
+    height: 20%;
+    transition: all 1s;
+
+    animation: stars_3 infinite 6s ease-out;
+    animation-delay: 1000ms;
+}
+.stars_1 {
+    position: absolute;
+    top: -20%;
+    right: 0%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+
+    animation: stars_4 infinite 8s linear;
+}
+.stars_2 {
+    position: absolute;
+    top: -20%;
+    right: 0%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s;
+
+    animation: stars_5 infinite 10s ease-out;
+    animation-delay: 2000s;
+}
+
+
+.categories_inner {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: center;
+
+}
+.garderob_item {
+    margin-bottom: 30px;
+    margin-left: 130px;
+}
+.categories_item_link {
+    position: relative;
+    width: 518px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.item_title { 
+    position: absolute;
+
+    font-family: Sreda ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.3em;
+    z-index: 1;
+}
+.garderob_title {
+    color: #3d3d3d;
+}
+.texnika_title {
+    color: #8000FF;
+}
+.rabota_title {
+    color: #AA0000;
+}
+.pitomci_title {
+    color: #3d3d3d;
+}
+.sport_title {
+    color: #8000FF;
+}
+.nedvijimost_title {
+    color: #AA0000;
+}
+.obmen_title {
+    color: #3d3d3d;
+}
+.darom_title {
+    color: #8000FF;
+}
+.categories_item_img {
+    opacity: .4;
+    border-radius: 10px;
+    
+    transition: linear .3s;
+
+}
+.back_item {
+    display: inline;
+    background-color: #FFFFFF;
+    width: 518px;
+    height: 220px;
+    z-index: 0;
+}
+.back_item:hover  {
+    z-index: 1;
+}
+.categories_item_img:hover {
+
+    opacity: 1;
+    z-index: 1;
+}
+.slider {
+    margin: auto;
+    
+}
+.slick-dots {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slick-dots li {
+    margin-left: 20px;
+    list-style-type: none;
+}
+.slick-dots button {
+    font-size: 0;
+    background-color: #FFB800;
+    border: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slick-active button {
+    font-size: 0;
+    background-color: #FF7A00;
+    border: none;
+    width: 37px;
+    height: 17px;
+    border-radius: 500px;
+
+    transition: all .4s;
+}
+
+
+
+
+
+
+.announcement_bg {
+    padding: 0px 88px;
+    padding-bottom: 90px;
+    margin-bottom: 180px;
+    background-color: #f0f0f0;
+    
+}
+
+.announcement_title {
+    padding-left: 0;
+}
+.announcement_inner {
+    margin-top: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.announcement_item {
+    width: 414px;
+    padding: 18px 30px;
+    border: 1px solid FBFFCF;
+    background: #FBFFCF;
+    filter: drop-shadow(0px 9px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 18px;
+
+    transition: .4s linear;
+}
+.announcement_item:hover {
+    box-shadow: -0px 0px 20px rgba(0, 0, 0, 0.445);
+}
+.announcement_item_photo {
+    border-radius: 10px;
+    width: 100%;
+}
+.product_name {
+    width: 288px;
+    margin: 11px auto 0px auto;
+    text-align: center;
+
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+}
+.attributs {
+    margin: 20px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.3em;
+    color: #AA0000;
+
+}
+.product_price {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.3em;
+    color: #AA0000;
+}
+.product_money {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.3em;
+    color: #8000FF;
+}
+.buy {
+    margin:20px auto 0 auto;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.085em;
+    color: #8000FF;
+    text-decoration: none;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition:all 2s;
+}
+.buy:hover {
+    color: #AA0000;
+}
+.load_block {
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+}
+.loader {
+    animation: loader 1s linear infinite;
   
-    <a href="#" class="btn message">
-        <svg class="btn_svg">
-            <rect class="btn_rect">
-            </rect>
-        </svg>
-        Сообщение
-    </a>
-   </div>
+}
+@keyframes loader {
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
-<div class="bottom_navbar">
-    <img class="logo_pomela" src="img/header/Logo_Pomela.svg" alt="Pomela">
-    <nav class="nav">
-        <a href="#" class="nav_link">Главная</a>
-        <span class="link_stick">|</span>
-        <a href="#" class="nav_link">Вопросы</a>
-        <span class="link_stick">|</span>
-        <a href="#" class="nav_link">Мой профиль</a>
-    </nav>
-    <a href="#" class="btn btn_publish publish">
-        <svg class="btn_svg">
-            <rect class="btn_rect">
-            </rect>
-        </svg>
-        Разместить обьявление
-    </a>
-</div>
-<div class="Bottom">
-    <h2 class="h2">Бесплатные объявления 
-        по всему Узбекситану</h2>
-    </div>
-        <main class="main">
-        <form class="header_form" method="GET" action="/">
-                <div class="input_search">
-                    <label for="form_control">
-                    <img class="search_icon" src="img/header/search_icon.svg" alt="i"></label>
-                <input id="form_control" class="form_control" name="searchWord" type="text" placeholder="Что ищем?">
-            </div>
-            <div class="header_location">
-                <img class="search_icon" src="img/header/header_location.svg" alt="">
-                <button name="submit" class="button_location">Выбрать регион</button>
-            </div>
-            <button name="submit" class="button_search">Поиск</button>
-        </form>
-    </main>
-    </div>
-   </header>
-   <section id="categories" class="categories">
-       <div class="container">
-           <div class="categories_bg">
-           <h3 class="section_title">Все категории</h3>
-           <div class="categories_inner">
-               <div class="categories_img">
-               <img class="categories_photo" src="img/categories/amico.svg" alt="Photo">
-               <img class="stars" src="img/categories/Sparkles.svg" alt="photo">
-               <img class="stars_1" src="img/categories/Sparkles.svg" alt="photo">
-               <img class="stars_2" src="img/categories/Sparkles.svg" alt="photo">
-            </div>
-           <div class="slider">
-               <div class="garderob_item">
-               <a href="#" class="categories_item_link">
-                <h4 class="item_title garderob_title">Гардероб</h4>
-                <div class="back_item">
-                <img class="categories_item_img" src="img/categories/garderob.png" alt="Garderob">
-                </div>
-               </a>
-            </div>
-            <div class="garderob_item">
-                <a href="#" class="categories_item_link">
-                 <h4 class="item_title texnika_title">Техника</h4>
-                 <div class="back_item">
-                 <img class="categories_item_img" src="img/categories/texnika.png" alt="texnika">
+
+
+
+
+
+
+
+
+
+
+.about_bg {
+    background-color: #f0f0f0;
+    padding: 0px 75px 100px 75px;
+}
+.about_title {
+    padding-left: 0;
+}
+.about_inner {
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
  
-                </div>            
-                </a>
-             </div>
-             <div class="garderob_item">
-                <a href="#" class="categories_item_link">
-                 <h4 class="item_title rabota_title">Работа</h4>
-                 <div class="back_item">
-                 <img class="categories_item_img" src="img/categories/rabota.png" alt="rabota">
-   
-                </div>        
-                    </a>
-             </div>
-             <div class="garderob_item">
-                <a href="#" class="categories_item_link">
-                 <h4 class="item_title pitomci_title">Питомцы</h4>
-                 <div class="back_item">
-                 <img class="categories_item_img" src="img/categories/Pitomci.png" alt="Pitomci">
- 
-                </div>            
-                </a>
-             </div>
-             <div class="garderob_item">
-                <a href="#" class="categories_item_link">
-                 <h4 class="item_title sport_title">Спорт</h4>
-                 <div class="back_item">
-                 <img class="categories_item_img" src="img/categories/sport.png" alt="sport">
-     
-                </div>          
-                </a>
-             </div>
-             <div class="garderob_item">
-                <a href="#" class="categories_item_link">
-                 <h4 class="item_title nedvijimost_title">Недвижимость</h4>
-                 <div class="back_item">
-                 <img class="categories_item_img" src="img/categories/Nedvijimost.png" alt="Nedvijimost">
-                </div>
-                </a>
-             </div>
-             <div class="garderob_item">
-                <a href="#" class="categories_item_link">
-                 <h4 class="item_title obmen_title">Обмен</h4>
-                 <div class="back_item">
-                 <img class="categories_item_img" src="img/categories/obmen.png" alt="obmen">
-     
-     </div>       
-        </a>
-             </div>
-             <div class="garderob_item">
-                <a href="#" class="categories_item_link">
-                 <h4 class="item_title darom_title">Даром</h4>
-                 <div class="back_item">
-                 <img class="categories_item_img" src="img/categories/darom.png" alt="darom">
-     
-     </div>           </a>
-             </div>
-        </div>
-           </div>
-        </div>
-       </div>
-   </section>
+}
+.about_inner_img {
+    margin-right: 90px;
+}
+.about_text {
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 215.19%;
+    letter-spacing: 0.26em;
+    color: #000000;
+}
+.important {
+    font-weight: bold;
+    color: #8000FF;
+}
+.about_inner_middle {
+    margin-top: 100px;
+    display: flex;
+}
+.about_inner_middle_img {
+    margin-left: 50px;
+    width: 454px;
+}
+.about_text_right {
+    text-align: right;
+}
+.about_text_top {
+    margin-top: 20px;
+}
+.whoIm {
+    position: relative;
 
-    <section id="announcement" class="announcement">
-        <div class="container">
-            <div class="announcement_bg">
-                <h3 class="section_title announcement_title">Интересные предложения</h3>
-                <div class="announcement_inner">
-                    <div class="announcement_item">
-                        <img class="announcement_item_photo" src="img/предложения/lambo.png" alt="Photo">
-                        <h4 class="product_name">Название может быть
-                            очень длинным</h4>
-                            <div class="attributs">
-                            <p class="product_city">Город/улица</p>
-                                <p class="product_time">дата/время</p>
-                        </div>
-                        <span class="product_price">Цена:</span>
-                        <span class="product_money">100 000 Сум</span>
-                        <a href="#" class="btn buy">
-                            <svg class="btn_svg">
-                                <rect class="btn_rect">
-                                </rect>
-                            </svg>
-                            Хочу купить!
-                        </a>
-                    </div>
+    
+}
+.title_whoIm {
+    padding-left: 0;
+    padding-bottom: 60px;
 
-                    <div class="announcement_item">
-                        <img class="announcement_item_photo" src="img/предложения/lambo.png" alt="Photo">
-                        <h4 class="product_name">Название может быть
-                            очень длинным</h4>
-                            <div class="attributs">
-                            <p class="product_city">Город/улица</p>
-                                <p class="product_time">дата/время</p>
-                        </div>
-                        <span class="product_price">Цена:</span>
-                        <span class="product_money">100 000 Сум</span>
-                        <a href="#" class="btn buy">
-                            <svg class="btn_svg">
-                                <rect class="btn_rect">
-                                </rect>
-                            </svg>
-                            Хочу купить!
-                        </a>
-                    </div>
+}
+.pomela {
+    color: #8145FF;
+    font-weight: 700;
+    text-decoration: none;
+}
 
-                    <div class="announcement_item">
-                        <img class="announcement_item_photo" src="img/предложения/lambo.png" alt="Photo">
-                        <h4 class="product_name">Название может быть
-                            очень длинным</h4>
-                            <div class="attributs">
-                            <p class="product_city">Город/улица</p>
-                                <p class="product_time">дата/время</p>
-                        </div>
-                        <span class="product_price">Цена:</span>
-                        <span class="product_money">100 000 Сум</span>
-                        <a href="#" class="btn buy">
-                            <svg class="btn_svg">
-                                <rect class="btn_rect">
-                                </rect>
-                            </svg>
-                            Хочу купить!
-                        </a>
-                    </div>
-                </div>
-                <div class="load_block">
-                <img class="loader" src="img/предложения/loader.svg" alt="Load">
-            </div>
-            </div>
-        </div>
-    </section>
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about_bg">
-                <h3 class="section_title about_title">Почему мы?</h3>
-                <div class="about_inner">
-                    <img class="about_inner_img" src="img/about/img_1.svg" alt="Photo">
-                    <p class="about_text">Почему мы , мы <span class="important">единственный</span>  сайт который реально <span class="important">заботится</span>  о своих клиентах и для нас важен <span class="important">каждый</span>  момент ,каждый случай.</p>
-                </div>
-                <p class="about_text">В особенности хотелось бы отметить что мы <span class="important">предоставляем</span>  гарантию для <span class="important">каждого покупателя</span>  и продавца ,а на минуточку такого никто себе не позволяет ,никакая доска <span class="important">объявлений</span>  в Узбекистане и мы работаем <span class="important">исключительно</span>  за качество и за защиту своих клиентов со стороны <span class="important">покупателя</span>  и <span class="important">продавца</span> </p>
-                <div class="about_inner_middle">
-                    <p class="about_text">Мы не отдаем <span class="important">проекты</span>  на аутсорсинг, а делаем всё сами, это <span class="important">позволяет</span>   на 100%  <span class="important">контролировать</span>  качество продукта.</p>
-                    <img class="about_inner_middle_img" src="img/about/img_2.svg" alt="">
-                </div>
-                <p class="about_text about_text_bottom"> В нашей компании <span class="important">работают</span>  более 10-ти <span class="important">высококлассных</span>  сотрудников из области  дизайна,<span class="important">программирования</span> , вёрстки, seo-продвижения и <span class="important">менеджмента</span> </p>
-
-                <div class="about_inner">
-                    <img class="about_inner_img" src="img/about/img_3.svg" alt="Photo">
-                    <div class="text_bottom">
-                    <p class="about_text about_text_right">У нас <span class="important">молодая</span>  дружная компания, средний возраст компании 24-25 <span class="important">лет.</span> 
-                        </p>
-                        <p class="about_text about_text_right about_text_top"> Поэтому многие вещи мы делаем очень <span class="important">быстро</span>   и используем самые современные технологии...</p>
-                    </div>
-                </div>
-                <div id="whoIm" class="whoIm">
-                    <h3 class="section_title title_whoIm">Кто мы?</h3>
-                    <p class="whoIm_text about_text">Что такое <span class="important">помело</span>  - это фрукт, а если думать о <a href="index.html" class="pomela">pomela.uz</a> , то, это сайт с доской бесплатных объявлений в просторах Узбекистана, с очень простым и интересным функционалом, который думает о своем каждом клиенте!</p>
-                    <img class="fruit_parallax fruit_parallax_1" src="img/about/image_1.png" alt="X">
-                    <img class="fruit_parallax fruit_parallax_2" src="img/about/image_2.png" alt="X">
-                    <img class="fruit_parallax fruit_parallax_3" src="img/about/image_3.png" alt="X">
-                </div>
-
-            </div>
-        </div>
-    </section>
-</div>
-
-<div class="navigation">
-      <a href="#categories" class="navigation_link categories_link"> 
-        Категории</a>
-       <a href="#announcement" class="navigation_link premium_link">Предложения</a> 
-       <a href="#about" class="navigation_link about_link">О нас</a>
-       <a href="#whoIm" class="navigation_link whoIm_link">   
-        Кто мы?</a>
-</div>
-
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script src="js/slick.min.js"></script>
-   <script src="js/script.js"></script>
+.pomela:hover {
+    color: #8000FF;
+}  
+.fruit_parallax {
+    position: absolute;
+}
+.fruit_parallax_1 {
+    top: 0%;
+    right: 30%;
+}
+.fruit_parallax_2 {
+    bottom: -31%;
+    right: 22%;
+    z-index: 2;
+}
+.fruit_parallax_3 {
+    bottom: -31%;
+    left: 2%;
 
 
-</body>
-</html>
+}
+.about_text {
+    position: relative;
+    z-index: 1;
+}
 
+.navigation_link {
+    background-color: #f8f8f4;
+    text-decoration: none;
+    color: #8000FF;
+    margin-top: 10px;
+    border-radius: 10px; 
+    width: 200px;
+    padding: 10px 60px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    font-family: Jost;
+    font-size: 18px;
+    letter-spacing: .1em;
+
+
+
+}
+.categories_link {
+    position: fixed;
+    right: -150px;
+    top:40%;
+
+    transition: all .4s ease;
+}
+.premium_link {
+    position: fixed;
+    right: -200px;
+    top:46%;
+    width: 250px;
+
+    transition: all .4s ease;
+}
+.about_link {
+    position: fixed;
+    right: -150px;
+    top:52%;
+
+    transition: all .4s ease;
+}
+.whoIm_link {
+    position: fixed;
+    right: -150px;
+    top:58%;
+
+    transition: all .4s ease;
+}
+.navigation_link:hover {
+    right: 0;
+}
